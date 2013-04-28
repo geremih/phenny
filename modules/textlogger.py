@@ -16,7 +16,7 @@ def textlogger(phenny, input):
     if not os.path.exists(textlogger.logger_folder):
         os.makedirs(textlogger.logger_folder)
 
-    logger_file = os.path.join(textlogger.logger_folder ,datetime.date.today().__str__())
+    logger_file = os.path.join(textlogger.logger_folder ,datetime.date.today().__str__()+".txt")
     pdb.set_trace()
     message= {
         'channel': input.sender,
