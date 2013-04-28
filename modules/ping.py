@@ -9,11 +9,11 @@ import random, re
 
 def hello(phenny, input): 
     nickname = phenny.nick
-    temporaryMessage = "  If you're a GSoC student, check out http://wiki.apertium.org/wiki/Top_tips_for_GSOC_applications"
+   
     greeting = random.choice(('Hi', 'Hey', 'Hello', 'What\'s kicking', 'What\'s the good word', 'Top of the morning', 'Yo', 'What up', "What's hanging", "In the hood", "Kaixo", "Zer moduz", "Сәлем", "Қалың қалай", "Salom", "Привет", "No bugs is good bugs", "Mitä kuuluu", "حالت چطوره", "როგორა ხარ", "ինչպե՞ս ես", "сайн байна уу", "कैसे हो", "Como vai", "Nasılsın"))
     if not re.search(nickname, input):
         punctuation = random.choice(('.', '!', ';'))
-        phenny.say(greeting + ' ' + input.nick + punctuation +temporaryMessage)
+        phenny.say(greeting + ' ' + input.nick + punctuation )
     else:
         punctuation = random.choice(('', '!'))
         phenny.say(greeting + ' ' + input.nick + punctuation)
