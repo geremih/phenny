@@ -6,7 +6,7 @@ author: mutantmonkey <mutantmonkey@mutantmonkey.in>
 
 import os
 import datetime
-import pdb
+
 def setup(self):
     pass;
 def textlogger(phenny, input):
@@ -17,8 +17,8 @@ def textlogger(phenny, input):
         os.makedirs(textlogger.logger_folder)
 
     logger_file = os.path.join(textlogger.logger_folder ,datetime.date.today().__str__()+".txt")
-    pdb.set_trace()
     message= {
+        'time' = datetime.time.
         'channel': input.sender,
         'nick': input.nick,
         'msg': input.group(1),
