@@ -18,7 +18,7 @@ def textlogger(phenny, input):
 
     logger_file = os.path.join(textlogger.logger_folder ,datetime.date.today().__str__()+".txt")
     message= {
-        'time' = datetime.time.
+
         'channel': input.sender,
         'nick': input.nick,
         'msg': input.group(1),
