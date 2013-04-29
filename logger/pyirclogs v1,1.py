@@ -182,12 +182,14 @@ irc = irclib.IRC()
 irc.add_global_handler('join', handleJoin)
 irc.add_global_handler('part',handlePart)
 irc.add_global_handler('pubmsg', handlePubMessage)
-irc.add_global_handler('topic', handleTopic)########################################################################
-#irc.add_global_handler('quit', handleQuit) ## Quits and Nick changes can NOT be handled by the bot at this time, ##
-irc.add_global_handler('kick', handleKick)  ## due to the fact there is no "source" for the change in the ircd;   ##
-irc.add_global_handler('mode', handleMode)  ## hence if you log multiple rooms, a quit or nickname change will    ##
-#irc.add_global_handler('nick',handleNick)  ##  echo into the logs for all your rooms, which is not wanted.       ##
-                                            ########################################################################
+irc.add_global_handler('topic', handleTopic)
+if len(channels) <1:
+    irc.add_global_handler('quit', handleQuit)
+    irc.add_global_handler('nick',handleNick) 
+irc.add_global_handler('kick', handleKick)  
+irc.add_global_handler('mode', handleMode)  
+
+                                            
 
 # Create a server object, connect and join the channel
 server = irc.server()
