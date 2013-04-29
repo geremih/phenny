@@ -4,12 +4,12 @@ import os
 
 network = 'irc.amrav.net'
 port = 6667
-nick = 'pyIRCBot' ## Change this, of course.
+nick = 'chagya' ## Change this, of course.
 channels = ['#adda'] # LOWERCASE ONLY
-name = 'IRC Log Bot - http://code.google.com/p/pyirclogs/'
+name = 'me is logging you'
 password = 'nickserv-password'
 
-LOG_PATH = '/home/anakin/logs/'
+LOG_PATH = os.path.expanduser('~/logs/')
 
 
 __author__ = "Base code designed by Chris Oliver <excid3@gmail.com>, heavily modified by Harry Strongburg <lolwutaf2@gmail.com>"
