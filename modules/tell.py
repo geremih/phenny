@@ -91,8 +91,8 @@ def f_remind(phenny, input):
         #                              "your message may get lost.")
 
         rand = random.random()
-        if rand > 0.9999: response = "yeah, yeah"
-        elif rand > 0.999: response = "yeah, sure, whatever"
+        if rand > 0.9999 : response = "yeah, yeah"
+        elif rand > 0.99: response = "yeah, sure, whatever"
 
         phenny.reply(response)
     elif teller.lower() == tellee: 
@@ -105,13 +105,13 @@ f_remind.thread = False
 
 def getReminders(phenny, channel, key, tellee): 
     lines = []
-    template = "%s: %s <%s> %s %s %s"
+    template = "%s: %s <%s> %s"
     today = time.strftime('%d %b', time.gmtime())
 
     for (teller, verb, datetime, msg) in phenny.reminders[key]: 
         if datetime.startswith(today): 
             datetime = datetime[len(today)+1:]
-        lines.append(template % (tellee, datetime, teller, verb, tellee, msg))
+        lines.append(template % (tellee, datetime, teller, msg))
 
     try: del phenny.reminders[key]
     except KeyError: phenny.msg(channel, 'Er...')
